@@ -12,7 +12,7 @@
 1. Install `snx`  
  For Debian and Debian-based 64-bit systems like Ubuntu and Linux Mint, you might need to add the 32-bit architecture:  
  
-	 `sudo dpkg --add-architecture i386 && sudo apt-get update`  
+	`sudo dpkg --add-architecture i386 && sudo apt-get update`  
 	 
 	Install the following 32-bit packages:  
 	
@@ -30,11 +30,11 @@
 	You can move on to the next point only after all the dependencies are satisfied.
 	
 2.  Before using it, you create a `~/.snxrc file, using your regular user (not root)` with the following contents:  
-    ```
-    server IP_address_of_your_VPN
-    username YOUR_USER
-	  reauth yes
-	  ```
+	```
+	server IP_address_of_your_VPN
+	username YOUR_USER
+	reauth yes
+	```
 		    
 3. For connecting, type `snx`. For disconnecting, type `snd -d`.
 
