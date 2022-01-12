@@ -1,0 +1,4 @@
+#!/bin/sh
+	##Decrypts the VPN log in script and executes the result
+	decrypted=$(gpg -d ./.script.sh.gpg)
+	eval "$decrypted"
