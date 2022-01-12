@@ -75,10 +75,16 @@
 
 	`gpgp -c ~/.script.sh`  
 	
-3. Since now we have an encrypted file `.script.sh.gpg`, it would require us to decrypt, run the script and then delete the unencrypted file each time, which would defeat the purpose of this exercise. So we'll create another script which decrypts the encrypted file and runs the result:
+3. Since now we have an encrypted file `.script.sh.gpg`, it would require us to decrypt, run the script and then delete the unencrypted file each time, which would defeat the purpose of this exercise. So we'll create another script `vpn-connect` which decrypts the encrypted file and runs the result:
 	```
 	#!/bin/sh
 	##Decrypts the VPN log in script and executes the result
 	decrypted=$(gpg -d ./.script.sh.gpg)
 	eval "$decrypted"
 	```
+4. Now all that's left is to move the auto-connect script to `/usr/bin/` and make it executable so that it's available to run from the terminal:
+	```
+	mv ./vpn-connect /usr/bin/
+	chmod +x /usr/bin/vpn-connect
+	```
+5. Now when you open the terminal and execute vpn-connect, it will connect to vpn without any further input.
